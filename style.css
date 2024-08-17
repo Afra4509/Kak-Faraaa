@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
-body{
+body {
     background: linear-gradient(black, #38073b);
     font-family: 'Acme', sans-serif;
 }
 
-.paralax{
+.paralax {
     position: relative;
     width: 100%;
-    height: 200vh;
-    padding: 300px;
+    height: 150vh;
+    padding: 100px 20px; /* Reduced padding for better mobile view */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,10 +28,11 @@ body{
     bottom: 0;
     width: 100%;
     height: 100px;
-    background: linear-gradient(to top,#c4c2c3,transparent );
+    background: linear-gradient(to top, #c4c2c3, transparent);
     z-index: 1000;
 }
-.paralax img{
+
+.paralax img {
     position: absolute;
     top: 0;
     left: 0;
@@ -39,35 +40,78 @@ body{
     height: 100%;
     object-fit: cover;
 }
-#text{
+
+#text {
     position: absolute;
-    font-size: 4.8em;
+    font-size: 2.5em; /* Adjusted for better readability on mobile */
     color: white;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-align: center;
     text-shadow: 3px 3px 10px grey;
-    bottom: -100px;
+    bottom: 50px; /* Adjusted positioning */
 }
-.paralax img#meteorid{
+
+.paralax img#meteorid {
     z-index: 100;
 }
 
-#button{
+#button {
     position: absolute;
-    font-size: 1em;
+    font-size: 0.8em; /* Adjusted size */
     color: black;
     background-color: white;
-    padding: 10px 50px;
+    padding: 8px 30px;
     border-radius: 20px;
     text-decoration: none;
-    transform: translateY(100px);
-    bottom: -100px;
+    transform: translateY(50px);
+    bottom: 50px;
 }
+
 .description {
     position: relative;
-    padding:10em;
+    padding: 2em 1em; /* Reduced padding for mobile */
     background-color: #c4c2c3;
 }
+
 .description p {
-    font-size: 1.1em;
+    font-size: 1em;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    #text {
+        font-size: 2em;
+    }
+
+    #button {
+        padding: 6px 20px;
+    }
+
+    .paralax {
+        padding: 50px 10px;
+        height: 120vh;
+    }
+
+    .description {
+        padding: 1.5em 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    #text {
+        font-size: 1.8em;
+    }
+
+    #button {
+        padding: 5px 15px;
+    }
+
+    .paralax {
+        padding: 40px 5px;
+        height: 100vh;
+    }
+
+    .description {
+        padding: 1em 0.5em;
+    }
 }
